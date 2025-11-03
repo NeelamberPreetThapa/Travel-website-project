@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghoom-Lo: India Awaits! Chalo, Nikalte Hain.</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'saffron': '#FF9933', // Primary Saffron
+                'deep-blue': '#000080', // Deep Blue for background
+                'green-flag': '#138808', // Secondary Green
+                'accent-gold': '#f7b731', // Accent Gold
+              },
+            }
+          }
+        }
+    </script>
+
+    <style>
+        .hero-background {
+            /* Placeholder for a cool Indian image (Himalayas) */
+            background-image: url('https://picsum.photos/1600/600?random=1');
+            background-size: cover;
+            background-position: center;
+            background-color: #000080;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav class="flex justify-between items-center py-4 border-b border-saffron/30">
+            <div class="text-3xl font-bold text-deep-blue">Ghoom-Lo 🇮🇳</div>
+            <div class="space-x-4">
+                <a href="#roam-rate" class="text-deep-blue hover:text-saffron transition duration-300 font-medium">Roam-Rate Finder</a>
+                <a href="#packages" class="text-deep-blue hover:text-saffron transition duration-300 font-medium">Hamare Packages</a>
+                <a href="https://unsplash.com/s/photos/india" target="_blank" class="text-deep-blue hover:text-saffron transition duration-300 font-medium">Tasveer Gallery</a>
+            </div>
+        </nav>
+        
+        <header class="hero-background text-white py-20 my-8 rounded-xl shadow-lg">
+            <div class="bg-deep-blue/60 p-8 rounded-lg max-w-2xl mx-auto">
+                <h1 class="text-6xl font-extrabold text-saffron tracking-tight mb-2">India Awaits!</h1>
+                <h2 class="text-2xl font-light text-white">Chalo, nikalte hain. Discover the best of India, bindaas style.</h2>
+            </div>
+        </header>
+
+        <section id="roam-rate" class="py-12">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-bold text-green-flag mb-2">🌍 Roam-Rate Finder - Kitna Lagega?</h2>
+                <p class="text-gray-600 text-lg">Destination aur starting point chuno, aur rate turant dekho!</p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-xl shadow-2xl border-t-4 border-saffron max-w-3xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div>
+                        <label for="start-point" class="block text-sm font-medium text-gray-700">Starting Point (Kahan Se?)</label>
+                        <select id="start-point" required class="mt-1 block w-full pl-3 pr-10 py-2 border border-gray-300 focus:outline-none focus:ring-saffron focus:border-saffron sm:text-sm rounded-md">
+                            <option value="">Select City</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Kolkata">Kolkata</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="destination" class="block text-sm font-medium text-gray-700">Destination (Kahan Jana Hai?)</label>
+                        <select id="destination" required class="mt-1 block w-full pl-3 pr-10 py-2 border border-gray-300 focus:outline-none focus:ring-saffron focus:border-saffron sm:text-sm rounded-md">
+                            <option value="">Select Destination</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Manali">Manali</option>
+                            <option value="Leh">Leh-Ladakh</option>
+                            <option value="Kochi">Kochi (Kerala)</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="travel-date" class="block text-sm font-medium text-gray-700">Travel Date (Kab Jana Hai?)</label>
+                        <input type="date" id="travel-date" required class="mt-1 block w-full pl-3 pr-4 py-2 border border-gray-300 focus:outline-none focus:ring-saffron focus:border-saffron sm:text-sm rounded-md">
+                    </div>
+                </div>
+
+                <button onclick="calculateRate()" class="w-full py-3 bg-saffron text-white font-semibold rounded-lg hover:bg-saffron/80 transition duration-300">
+                    Rate Dekho, Boss!
+                </button>
+
+                <div id="rate-output" class="mt-6 p-4 bg-deep-blue/10 rounded-lg border border-deep-blue/20">
+                    <p class="text-deep-blue font-medium">Rate aur availability yahan display hoga.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-10 border-saffron/50">
+
+        <section id="packages" class="py-12">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-bold text-green-flag mb-2">🎒 Hamare Packages: Paisa-Wasool Trips</h2>
+                <p class="text-gray-600 text-lg">Curated trips jo aapki journey ko ek number bana dega.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.02] transition duration-500">
+                    <img class="h-48 w-full object-cover" src="https://picsum.photos/400/300?random=10" alt="Himalayan Treks">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-deep-blue mb-2">Himalayan Treks (#Pahadon_ki_Raani)</h3>
+                        <p class="text-gray-600 mb-4">7 Days of shanti and adventure in the mountains. Trek to pristine lakes and quiet villages.</p>
+                        <a href="#" class="inline-block px-4 py-2 bg-green-flag text-white font-medium rounded-full hover:bg-green-flag/80 transition">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.02] transition duration-500">
+                    <img class="h-48 w-full object-cover" src="https://picsum.photos/400/300?random=11" alt="Coastal Escapes">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-deep-blue mb-2">Coastal Escapes (#Beach_Vibes)</h3>
+                        <p class="text-gray-600 mb-4">4 Days of sun, sand, and seafood. Goa, Kerala, ya phir Andaman? Mazaa aa jaega!</p>
+                        <a href="#" class="inline-block px-4 py-2 bg-green-flag text-white font-medium rounded-full hover:bg-green-flag/80 transition">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.02] transition duration-500">
+                    <img class="h-48 w-full object-cover" src="https://picsum.photos/400/300?random=12" alt="Golden Triangle">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-deep-blue mb-2">Golden Triangle (History_Bhai)</h3>
+                        <p class="text-gray-600 mb-4">A classic: Delhi, Agra, Jaipur. See the Taj Mahal aur explore the kille (forts).</p>
+                        <a href="#" class="inline-block px-4 py-2 bg-green-flag text-white font-medium rounded-full hover:bg-green-flag/80 transition">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-10 border-saffron/50">
+
+        <section class="py-12">
+            <div class="text-center mb-6">
+                <h2 class="text-3xl font-bold text-deep-blue">✨ Aaj Ka Paisa-Wasool Tip</h2>
+            </div>
+            <div id="tip-display" class="bg-accent-gold/20 text-deep-blue p-6 rounded-xl border-4 border-accent-gold max-w-2xl mx-auto shadow-md">
+                </div>
+        </section>
+
+        <footer class="py-6 border-t border-saffron/30 mt-10">
+            <div class="flex justify-between items-center text-gray-500 text-sm">
+                <p>Aapka travel partner. Made with dil se in India. | &copy; 2025 Ghoom-Lo</p>
+                <div class="space-x-4">
+                    <a href="#" class="hover:text-saffron transition duration-300">Contact Karo</a>
+                    <a href="#" class="hover:text-saffron transition duration-300">Social Media</a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // --- 1. ROAM-RATE FINDER LOGIC ---
+
+        // Hardcoded data for rate simulation (STATIC DATA)
+        const RoamRates = {
+            "Delhi-Goa": { price: 7500, availability: "Limited Seats", note: "Book soon for best flight options." },
+            "Delhi-Manali": { price: 8500, availability: "High Availability", note: "Road trip package included. Mast trip!" },
+            "Mumbai-Kochi": { price: 5800, availability: "Limited Seats", note: "Monsoon season rates up. Check for discounts." },
+            "Bangalore-Leh": { price: 15000, availability: "Sold Out", note: "This route is currently full. Try next month." },
+            "Kolkata-Goa": { price: 9100, availability: "High Availability", note: "Direct flights available." },
+            "Default": { price: 0, availability: "Invalid Route", note: "Sahi jagah chuno, na!" }
+        };
+
+        function calculateRate() {
+            const start = document.getElementById('start-point').value;
+            const dest = document.getElementById('destination').value;
+            const date = document.getElementById('travel-date').value;
+            const outputDiv = document.getElementById('rate-output');
+            
+            // Simple validation (agar kuch select nahi kiya)
+            if (!start || !dest || !date) {
+                outputDiv.innerHTML = '<p class="text-red-600 font-semibold">Arre! Please select Starting Point, Destination, AND a Travel Date.</p>';
+                return;
+            }
+
+            const route = `${start}-${dest}`;
+            const result = RoamRates[route] || RoamRates["Default"];
+            
+            // Format the price for Indian Rupees
+            const formattedPrice = result.price.toLocaleString('en-IN');
+            
+            // Set styles based on availability
+            let statusColor = 'text-green-flag';
+            if (result.availability === 'Limited Seats') {
+                statusColor = 'text-saffron';
+            } else if (result.availability === 'Sold Out' || result.availability === 'Invalid Route') {
+                statusColor = 'text-red-600';
+            }
+
+            // Display the output using Tailwind classes
+            outputDiv.innerHTML = `
+                <h3 class="text-xl font-bold text-deep-blue mb-2">✅ Aapka Rate Mil Gaya!</h3>
+                <p><span class="font-semibold">Route:</span> ${start} to ${dest} on ${date}</p>
+                <p class="text-2xl font-extrabold text-saffron mt-2">Approx. Roam-Rate: ₹${formattedPrice}</p>
+                <p class="font-bold ${statusColor} mt-1">Availability Status: ${result.availability}</p>
+                <p class="text-sm text-gray-500 mt-2"><em>${result.note}</em></p>
+                <p class="text-xs text-gray-400 mt-1">This is a simulated rate. Real prices may vary. Theek hai?</p>
+            `;
+        }
+
+        // --- 2. PAISA-WASOOL TIP LOGIC ---
+
+        const travelTips = [
+            "Local markets mein bindaas bargain karna, lekin pyaar se! Thoda paise bachao.",
+            "Small towns mein auto-rickshaw lene se pehle meter chalu karwao, ya rate fix kar lo. No drama!",
+            "Train travel ke liye, book bohat pehle (much in advance). Indian Railways ki booking tez hoti hai.",
+            "Street food try zaroor karna, but always drink bottled water. Health first, yaar!",
+            "Carry a power bank. India mein charging points mushkil se milte hain sometimes.",
+            "Always keep some small change (chutta) ready for tips and small purchases. Bahut kaam aayega!"
+        ];
+
+        function loadRandomTip() {
+            const randomIndex = Math.floor(Math.random() * travelTips.length);
+            const tip = travelTips[randomIndex];
+            
+            document.getElementById('tip-display').innerHTML = `
+                <p class="text-lg font-semibold">${tip}</p>
+            `;
+        }
+
+        // Load the tip when the page loads
+        window.onload = loadRandomTip;
+    </script>
+</body>
+</html>
