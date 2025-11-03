@@ -24,7 +24,6 @@
 
     <style>
         .hero-background {
-            /* Placeholder for a cool Indian image (Himalayas) */
             background-image: url('https://picsum.photos/1600/600?random=1');
             background-size: cover;
             background-position: center;
@@ -35,29 +34,35 @@
 <body class="bg-gray-50 font-sans">
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         <nav class="flex justify-between items-center py-4 border-b border-saffron/30">
             <div class="text-3xl font-bold text-deep-blue">Ghoom-Lo 🇮🇳</div>
-            <div class="space-x-4">
+            
+            <div class="hidden md:block space-x-4">
                 <a href="#roam-rate" class="text-deep-blue hover:text-saffron transition duration-300 font-medium">Roam-Rate Finder</a>
                 <a href="#packages" class="text-deep-blue hover:text-saffron transition duration-300 font-medium">Hamare Packages</a>
                 <a href="https://unsplash.com/s/photos/india" target="_blank" class="text-deep-blue hover:text-saffron transition duration-300 font-medium">Tasveer Gallery</a>
             </div>
+
+            <div class="md:hidden">
+                <button class="text-deep-blue text-2xl font-bold">☰</button>
+            </div>
         </nav>
         
-        <header class="hero-background text-white py-20 my-8 rounded-xl shadow-lg">
-            <div class="bg-deep-blue/60 p-8 rounded-lg max-w-2xl mx-auto">
-                <h1 class="text-6xl font-extrabold text-saffron tracking-tight mb-2">India Awaits!</h1>
-                <h2 class="text-2xl font-light text-white">Chalo, nikalte hain. Discover the best of India, bindaas style.</h2>
+        <header class="hero-background text-white py-16 sm:py-20 my-8 rounded-xl shadow-lg">
+            <div class="bg-deep-blue/60 p-6 sm:p-8 rounded-lg max-w-2xl mx-auto">
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-saffron tracking-tight mb-2">India Awaits!</h1>
+                <h2 class="text-xl sm:text-2xl font-light text-white">Chalo, nikalte hain. Discover the best of India, bindaas style.</h2>
             </div>
         </header>
 
         <section id="roam-rate" class="py-12">
             <div class="text-center mb-10">
-                <h2 class="text-4xl font-bold text-green-flag mb-2">🌍 Roam-Rate Finder - Kitna Lagega?</h2>
-                <p class="text-gray-600 text-lg">Destination aur starting point chuno, aur rate turant dekho!</p>
+                <h2 class="text-3xl sm:text-4xl font-bold text-green-flag mb-2">🌍 Roam-Rate Finder - Kitna Lagega?</h2>
+                <p class="text-gray-600 text-base sm:text-lg">Destination aur starting point chuno, aur rate turant dekho!</p>
             </div>
             
-            <div class="bg-white p-8 rounded-xl shadow-2xl border-t-4 border-saffron max-w-3xl mx-auto">
+            <div class="bg-white p-6 sm:p-8 rounded-xl shadow-2xl border-t-4 border-saffron max-w-3xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                     <div>
                         <label for="start-point" class="block text-sm font-medium text-gray-700">Starting Point (Kahan Se?)</label>
@@ -101,8 +106,8 @@
 
         <section id="packages" class="py-12">
             <div class="text-center mb-10">
-                <h2 class="text-4xl font-bold text-green-flag mb-2">🎒 Hamare Packages: Paisa-Wasool Trips</h2>
-                <p class="text-gray-600 text-lg">Curated trips jo aapki journey ko ek number bana dega.</p>
+                <h2 class="text-3xl sm:text-4xl font-bold text-green-flag mb-2">🎒 Hamare Packages: Paisa-Wasool Trips</h2>
+                <p class="text-gray-600 text-base sm:text-lg">Curated trips jo aapki journey ko ek number bana dega.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -114,7 +119,6 @@
                         <a href="#" class="inline-block px-4 py-2 bg-green-flag text-white font-medium rounded-full hover:bg-green-flag/80 transition">View Details</a>
                     </div>
                 </div>
-                
                 <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.02] transition duration-500">
                     <img class="h-48 w-full object-cover" src="https://picsum.photos/400/300?random=11" alt="Coastal Escapes">
                     <div class="p-6">
@@ -123,7 +127,6 @@
                         <a href="#" class="inline-block px-4 py-2 bg-green-flag text-white font-medium rounded-full hover:bg-green-flag/80 transition">View Details</a>
                     </div>
                 </div>
-                
                 <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.02] transition duration-500">
                     <img class="h-48 w-full object-cover" src="https://picsum.photos/400/300?random=12" alt="Golden Triangle">
                     <div class="p-6">
@@ -146,8 +149,8 @@
         </section>
 
         <footer class="py-6 border-t border-saffron/30 mt-10">
-            <div class="flex justify-between items-center text-gray-500 text-sm">
-                <p>Aapka travel partner. Made with dil se in India. | &copy; 2025 Ghoom-Lo</p>
+            <div class="flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm space-y-2 md:space-y-0">
+                <p class="text-center md:text-left">Aapka travel partner. Made with dil se in India. | &copy; 2025 Ghoom-Lo</p>
                 <div class="space-x-4">
                     <a href="#" class="hover:text-saffron transition duration-300">Contact Karo</a>
                     <a href="#" class="hover:text-saffron transition duration-300">Social Media</a>
@@ -159,8 +162,6 @@
 
     <script>
         // --- 1. ROAM-RATE FINDER LOGIC ---
-
-        // Hardcoded data for rate simulation (STATIC DATA)
         const RoamRates = {
             "Delhi-Goa": { price: 7500, availability: "Limited Seats", note: "Book soon for best flight options." },
             "Delhi-Manali": { price: 8500, availability: "High Availability", note: "Road trip package included. Mast trip!" },
@@ -176,7 +177,6 @@
             const date = document.getElementById('travel-date').value;
             const outputDiv = document.getElementById('rate-output');
             
-            // Simple validation (agar kuch select nahi kiya)
             if (!start || !dest || !date) {
                 outputDiv.innerHTML = '<p class="text-red-600 font-semibold">Arre! Please select Starting Point, Destination, AND a Travel Date.</p>';
                 return;
@@ -185,10 +185,8 @@
             const route = `${start}-${dest}`;
             const result = RoamRates[route] || RoamRates["Default"];
             
-            // Format the price for Indian Rupees
             const formattedPrice = result.price.toLocaleString('en-IN');
             
-            // Set styles based on availability
             let statusColor = 'text-green-flag';
             if (result.availability === 'Limited Seats') {
                 statusColor = 'text-saffron';
@@ -196,7 +194,6 @@
                 statusColor = 'text-red-600';
             }
 
-            // Display the output using Tailwind classes
             outputDiv.innerHTML = `
                 <h3 class="text-xl font-bold text-deep-blue mb-2">✅ Aapka Rate Mil Gaya!</h3>
                 <p><span class="font-semibold">Route:</span> ${start} to ${dest} on ${date}</p>
@@ -208,7 +205,6 @@
         }
 
         // --- 2. PAISA-WASOOL TIP LOGIC ---
-
         const travelTips = [
             "Local markets mein bindaas bargain karna, lekin pyaar se! Thoda paise bachao.",
             "Small towns mein auto-rickshaw lene se pehle meter chalu karwao, ya rate fix kar lo. No drama!",
@@ -226,8 +222,6 @@
                 <p class="text-lg font-semibold">${tip}</p>
             `;
         }
-
-        // Load the tip when the page loads
         window.onload = loadRandomTip;
     </script>
 </body>
